@@ -134,6 +134,7 @@ extension HSCycleGalleryView {
             collectionView.scrollToItem(at: IndexPath(item: currentIndex, section: 0), at: .centeredHorizontally, animated: false)
         }
         let nextIndex = currentIndex + 1
+        delegate?.changePageControl(currentIndex: nextIndex)
         collectionView.scrollToItem(at: IndexPath(item: nextIndex, section: 0), at: .centeredHorizontally, animated: true)
         currentIndexPath = IndexPath(item: nextIndex, section: 0)
     }
@@ -167,7 +168,6 @@ extension HSCycleGalleryView: UICollectionViewDelegate, UICollectionViewDataSour
         let index = (indexPathNow?.row ?? 0) % dataNum
         // 重置在中间
         currentIndexPath = IndexPath(item: groupCount / 2 * dataNum + index, section: 0)
-        delegate?.changePageControl(currentIndex: currentIndexPath.row)
         collectionView.scrollToItem(at: currentIndexPath, at: .centeredHorizontally, animated: false)
     }
     
