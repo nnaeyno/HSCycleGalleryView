@@ -14,6 +14,8 @@ import UIKit
     
     func cycleGalleryView(_ cycleGalleryView: HSCycleGalleryView, cellForItemAtIndex index: Int) -> UICollectionViewCell
     
+    func changePageControl(currentIndex: Int)
+    
     @objc optional func cycleGalleryView(_ cycleGalleryView: HSCycleGalleryView, didSelectItemCell cell: UICollectionViewCell, at Index: Int)
 }
 
@@ -165,6 +167,7 @@ extension HSCycleGalleryView: UICollectionViewDelegate, UICollectionViewDataSour
         let index = (indexPathNow?.row ?? 0) % dataNum
         // 重置在中间
         currentIndexPath = IndexPath(item: groupCount / 2 * dataNum + index, section: 0)
+        delegate?.changePageControl(currentIndex: currentIndexPath.row)
         collectionView.scrollToItem(at: currentIndexPath, at: .centeredHorizontally, animated: false)
     }
     
