@@ -136,12 +136,13 @@ extension HSCycleGalleryView {
         let nextIndex = currentIndex + 1
         collectionView.scrollToItem(at: IndexPath(item: nextIndex, section: 0), at: .centeredHorizontally, animated: true)
         currentIndexPath = IndexPath(item: nextIndex, section: 0)
-        
-        let pointInView = self.convert(collectionView.center, to: collectionView)
-        let indexPathNow = collectionView.indexPathForItem(at: pointInView)
-        let index = ((indexPathNow?.row ?? 0) + 1) % dataNum
-        
-        delegate?.changePageControl(currentIndex: index)
+        if dataNum > 0 {
+            let pointInView = self.convert(collectionView.center, to: collectionView)
+            let indexPathNow = collectionView.indexPathForItem(at: pointInView)
+            let index = ((indexPathNow?.row ?? 0) + 1) % dataNum
+            
+            delegate?.changePageControl(currentIndex: index)
+        }
     }
 }
 

@@ -29,6 +29,10 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: HSCycleGalleryViewDelegate {
+    func changePageControl(currentIndex: Int) {
+        
+    }
+    
     
     func numberOfItemInCycleGalleryView(_ cycleGalleryView: HSCycleGalleryView) -> Int {
         return colors.count
