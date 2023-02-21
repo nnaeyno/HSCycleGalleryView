@@ -10,8 +10,8 @@ import UIKit
 
 class HSCycleGalleryViewLayout: UICollectionViewFlowLayout {
     
-    var itemWidth: CGFloat = UIScreen.main.bounds.width * 0.6
-    var itemHeight: CGFloat = UIScreen.main.bounds.height * 0.7
+    var itemWidth: CGFloat = UIScreen.main.bounds.width * 0.75
+    var itemHeight: CGFloat = UIScreen.main.bounds.height * 0.6
     
     override func prepare() {
         super.prepare()
