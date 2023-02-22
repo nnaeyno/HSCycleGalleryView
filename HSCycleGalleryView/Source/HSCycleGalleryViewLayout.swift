@@ -10,7 +10,7 @@ import UIKit
 
 class HSCycleGalleryViewLayout: UICollectionViewFlowLayout {
     
-    var itemWidth: CGFloat = UIScreen.main.bounds.width * 0.75
+    var itemWidth: CGFloat = UIScreen.main.bounds.width * 0.7
     var itemHeight: CGFloat = UIScreen.main.bounds.height * 0.6
     
     override func prepare() {
@@ -22,10 +22,10 @@ class HSCycleGalleryViewLayout: UICollectionViewFlowLayout {
         self.minimumInteritemSpacing = 0
         self.minimumLineSpacing = 0
         
-        // 为了让第一张图片与最后一张图片出现在最中央
-        let left = (self.collectionView!.bounds.width - itemWidth) / 2
-        let top = (self.collectionView!.bounds.height - itemHeight) / 2
-        self.sectionInset = UIEdgeInsets.init(top: top, left: left, bottom: top, right: left)
+         // 为了让第一张图片与最后一张图片出现在最中央
+//         let left = (self.collectionView!.bounds.width - itemWidth) / 2
+//         let top = (self.collectionView!.bounds.height - itemHeight) / 2
+//         self.sectionInset = UIEdgeInsets.init(top: top, left: left, bottom: top, right: left)
         
     }
     
